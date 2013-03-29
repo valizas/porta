@@ -1,0 +1,30 @@
+{% load html-a %}
+<html>
+    <head>
+        <link rel="STYLESHEET" href="/admin_media/css/dashboard.css" type="text/css" />
+        <link rel="stylesheet" href="/media/css/style.css" type="text/css"/>
+        {% block header %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <div id="cabecera">
+            Sistema de Gesti&oacute;n de Informaci&oacute;n de Recursos Humanos
+        </div>
+
+        <ul id="toolboxmenu">
+            <li>{% html-a /recursoshumanos/desarrollohumano/editar-persona/ Alta %}</li>
+            <li>{% html-a /recursoshumanos/desarrollohumano/planilla/ Planilla %}</li>
+            <li>{% html-a /recursoshumanos/desarrollohumano/documentos-sin-relevar/ Documentos no relevados %}</li>
+            <li>{% html-a /recursoshumanos/desarrollohumano/buscar Buscar %}</td></li>
+            <li>{% html-a /recursoshumanos/desarrollohumano/seleccionar-campos/ Seleccionar campos %}</li>
+            <li>{% html-a /recursoshumanos/desarrollohumano/cargar-nuevos-documentos/ Cargar nuevos documentos %}</li>
+            <li>{% html-a /recursoshumanos/desarrollohumano/historia-de-busquedas/ Historia de búsquedas %}
+           <li>{% html-a /recursoshumanos/desarrollohumano/formgral-ajuste/ Ajuste de formulario %}
+           </li>
+        </ul>
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

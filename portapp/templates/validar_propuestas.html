@@ -1,0 +1,22 @@
+{% extends "my_base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}<p>{{ data_tarea }} </p><p> &lt;{{ user.email }}&gt;</p>{% endblock %}
+
+{% block content %}
+    <form method='post' action="/porta/portapp/validar_propuestas/">
+        {% csrf_token %}
+        {{ management_form }}
+        <div class='tabla'>
+        <table>
+            <th style=""><tr><td>Coautoría (seudónimo) </td><td>Estudiante</td><td> Fecha de propuesta</td><td>Estado actual</td><td>Validar?</td></th>
+        {% for d in object_list%}
+            <tr><td> "{{ d.0.coautoria }}"</td><td>  {{ d.0.estudiante }}</td><td> {{ d.0.fecha_ingreso }}</td><td> {{ d.0.stage }}</td><td> {{ d.1.as_p }}</td></tr>
+        {% endfor %}
+            <tr><td> </td><td>  </td><td> </td><td><input type="submit" value="Grabar" name="Grabar " id=Grabar /></td></tr>
+            
+        </table>
+        </div>
+        
+    </form>
+{% endblock %}

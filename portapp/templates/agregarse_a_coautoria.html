@@ -1,0 +1,28 @@
+{% extends "my_base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}<p>{{ data_tarea }} </p><p> &lt;{{ user.email }}&gt;</p>{% endblock %}
+
+{% block content %}
+
+    <ul>
+    {% for ec in estudiantes_ya_pertenecientes %}
+        <li> {{ ec }} </li>
+    {% endfor %}
+    </ul>
+    <form
+        action  = "/porta/portapp/agregarse_uno_a_coautoria/"
+        method  = "POST"
+    >
+        {% csrf_token %}
+        <table >
+            {{ sf.as_table }}
+            <tr>
+                <td></td>
+                <td><input type  = "submit" value = "Buscar" name='buscar'>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+{% endblock %}

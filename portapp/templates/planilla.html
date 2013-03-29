@@ -1,0 +1,90 @@
+{% extends "toolbox.html" %}
+{% load html-a %}
+
+{% block content %}
+{% autoescape on %}
+<div id="content">
+    <FORM enctype="multipart/form-data" action={{ post_url }} method="post">
+        {{ formgral.resultados }}
+        {{ formgral.mostrando }}
+        {% if botonera.buscar or botonera.grabar or botonera.ver_formularios %}
+            <div class="botonera">
+            {% if botonera.buscar %}
+                <INPUT type="submit" value="Buscar" />
+            {% endif %}
+            {% if botonera.grabar %}
+                <INPUT type="submit" value="Grabar" name='_planilla_grabar_presels' />
+            {% endif %}
+            {% if botonera.borrar %}
+                <INPUT type="submit" value="Borrar" name='_planilla_borrar_persona' />
+            {% endif %}
+            {% if botonera.ver_formularios %}
+                <INPUT type="submit" value="Ver formularios" name='_planilla_ver_formularios' />
+            {% endif %}
+            </div>
+        {% endif %}
+
+        <table class="ex" cellspacing="0" border="2" cellpadding="3">
+            {% for lc in llc %}
+                <tr style="background-color:{% cycle #CEE3F6,#FFFFFF %}">
+                {% ifequal lc.0 "-" %}
+                    </tr>
+                    </table>
+                    </br>
+                    <table class="ex" cellspacing="0" border="1" cellpadding="3">
+                    <tr style="background-color:{% cycle #CEE3F6,#FFFFFF %}">
+                {% else %}
+
+                  {% for c in lc %}
+                    <td><div style='
+                        {% if c.height %}
+                             height: {{ c.height }};
+                        {% endif %}
+                        {% if c.width %}
+                             width: {{ c.width }};
+                        {% endif %}
+                        {% if c.size %}
+                             size: {{ c.size }};
+                        {% endif %}
+                        {% if c.overflow %}
+                             overflow: {{ c.overflow }};
+                        {% endif %}
+                        '>
+                        {% if c.url %}
+                            <a href='{{ c.url }}'>
+                        {% endif %}
+                        {% if c %}
+                            {% if c.valorcampo or c.height or c.width or c.url or c.size %}
+                                {{ c.valorcampo }}
+                            {% else %}
+                                {% if c.presel %}
+                                    {{ c.presel }}
+                                    {{ c.color_presel }}
+                                    {{ c.obs_presel }}
+                                {% else %}
+                                    {{ c }}
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                        {% if c.url %}
+                            </a>
+                        {% endif %}
+                    </div></td>
+                   {% endfor %}
+                {% endifequal %}
+                </tr>
+            {% endfor %}
+        </table>
+
+        <div class="botonera">
+        {% if botonera.buscar %}
+            <INPUT type="submit" value="Buscar" />
+        {% endif %}
+        {% if botonera.grabar %}
+            <INPUT type="submit" value="Grabar" name='_planilla_grabar_presels' />
+        {% endif %}
+        </div>
+    </FORM>
+</div>
+{% endautoescape %}
+{% endblock %}

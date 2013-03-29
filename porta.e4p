@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Project SYSTEM "Project-5.1.dtd">
+<!-- eric5 project file for project porta -->
+<!-- Saved: 2012-03-27, 15:32:35 -->
+<!-- Copyright (C) 2012 ,  -->
+<Project version="5.1">
+  <Language>en_US</Language>
+  <Hash>aae451a33cdb4e747f327362334f31acf4bc5a7d</Hash>
+  <ProgLanguage mixed="0">Python2</ProgLanguage>
+  <ProjectType>E4Plugin</ProjectType>
+  <Description></Description>
+  <Version>0.1</Version>
+  <Author></Author>
+  <Email></Email>
+  <Sources>
+    <Source>__init__.py</Source>
+    <Source>manage.py</Source>
+    <Source>settings.py</Source>
+    <Source>urls.py</Source>
+    <Source>portapp/admin.py</Source>
+    <Source>portapp/cedula.py</Source>
+    <Source>portapp/tests.py</Source>
+    <Source>portapp/urls.py</Source>
+    <Source>portapp/views.py</Source>
+    <Source>portapp/__init__.py</Source>
+    <Source>portapp/models.py</Source>
+    <Source>portapp/templates/inicia.html</Source>
+    <Source>portapp/templates/lista.html</Source>
+    <Source>portapp/1036.py</Source>
+    <Source>portapp/templates/ingresar_documento.html</Source>
+    <Source>portapp/templates/porta1.html</Source>
+    <Source>portapp/templates/porta2.html</Source>
+    <Source>portapp/templatetags/html-a.py2</Source>
+    <Source>portapp/forms.py</Source>
+    <Source>portapp/globales.py</Source>
+    <Source>portapp/templates/createmodel.html</Source>
+    <Source>portapp/templates/ver_co_autorias_de_las_que_uno_participa.html</Source>
+  </Sources>
+  <Forms/>
+  <Translations/>
+  <Resources/>
+  <Interfaces/>
+  <Others>
+    <Other>portapp/templates/lista.html</Other>
+    <Other>portapp/templates/inicia.html</Other>
+    <Other>portapp/templates/ingresar_documento.html</Other>
+    <Other>portapp/templates/porta2.html</Other>
+    <Other>portapp/templates/toolboox.html</Other>
+    <Other>portapp/templates/planilla.html</Other>
+    <Other>portapp/templates/ver_co_autorias_de_las_que_uno_participa.html</Other>
+    <Other>portapp/templates/agregar_estudiante_a_coautoria.html</Other>
+  </Others>
+  <Vcs>
+    <VcsType>None</VcsType>
+  </Vcs>
+  <FiletypeAssociations>
+    <FiletypeAssociation pattern="*.idl" type="INTERFACES"/>
+    <FiletypeAssociation pattern="*.ptl" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.py2" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.pyw2" type="SOURCES"/>
+    <FiletypeAssociation pattern="*.qm" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.qrc" type="RESOURCES"/>
+    <FiletypeAssociation pattern="*.ts" type="TRANSLATIONS"/>
+    <FiletypeAssociation pattern="*.ui" type="FORMS"/>
+    <FiletypeAssociation pattern="*.ui.h" type="FORMS"/>
+  </FiletypeAssociations>
+</Project>

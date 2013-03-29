@@ -1,0 +1,16 @@
+{% extends "my_base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}<p>{{ data_tarea }} </p><p> &lt;{{ user.email }}&gt;</p>{% endblock %}
+
+{% block content %}
+
+    <div class='create'>
+        <form action='/porta/portapp/estudiante_crear_coautoria/' method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type='submit' name='create_button' value='Crear'>
+        </form>
+    </div>
+    
+{% endblock %}

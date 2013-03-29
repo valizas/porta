@@ -1,0 +1,15 @@
+{% extends "base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}Menú{% endblock %}
+
+{% block content %}
+
+    <div class='menu'>
+    <ul>
+    {% for m in object_list %}
+        <li><a href={{ m.1 }}>{{m.0}}</a></li>
+    {% endfor %}
+    </ul>
+    
+{% endblock %}

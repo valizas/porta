@@ -1,0 +1,26 @@
+{% extends "my_base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}{{ tarea }}{% endblock %}
+
+{% block content %}
+
+    <form enctype = "multipart/form-data" action = "/porta/portapp/ingresar_documento" method  = "POST">
+        {% csrf_token %}
+        <table>
+            {{ docu.as_table }}
+            <tr>
+                <td></td>
+                <td>
+                    <input 
+                        class = "input_input"
+                        type  = "submit"
+                        value = "Grabar"
+                        style = ""
+                    >
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+{% endblock %}

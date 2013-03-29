@@ -1,0 +1,26 @@
+from django import template
+register = template.Library()
+
+class HtmlANode(template.Node):
+    def __init__(self, url, texto):
+        self.url = url
+        self.texto = texto
+    def render(self, context):
+        return "<a href=%s>%s</a>" % (self.url,self.texto)
+
+
+def do_html_a(parser, token):
+    try:
+        # split_contents() knows not to split quoted strings.
+        cs = token.split_contents()
+        tag_name = cs[0]
+        url = cs[1]
+        texto = " ".join( w for w in cs[2:] )
+    except ValueError:
+        raise template.TemplateSyntaxError, "%r tag requires 2 arguments" % token.contents.split()[0]
+#    if not (format_string[0] == format_string[-1] and format_string[0] in ('"', "'")):
+#        raise template.TemplateSyntaxError, "%r tag's argument should be in quotes" % tag_name
+    return HtmlANode(url, texto)
+do_html = register.tag('html-a', do_html_a)
+
+

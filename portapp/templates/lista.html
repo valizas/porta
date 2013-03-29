@@ -1,0 +1,17 @@
+{% extends "my_base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}<p>{{ data_tarea }} </p><p> &lt;{{ user.email }}&gt;</p>{% endblock %}
+
+{% block content %}
+
+    <div class='table'>
+    <table>
+        <th>Nombre</th><th>email</th>
+    {% for d in object_list%}
+        <tr><td>{{ d }}</td><td> {{ d.email }}</td></tr>
+    {% endfor %}
+    </table>
+    </div>
+    
+{% endblock %}

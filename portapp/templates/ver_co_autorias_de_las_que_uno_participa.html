@@ -1,0 +1,23 @@
+{% extends "my_base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}<p>{{ data_tarea }} </p><p> &lt;{{ user.email }}&gt;</p>{% endblock %}
+
+{% block content %}
+
+    <div class='lista'>
+    <ul>
+    {% for d in object_list%}
+        <li>Seudónimo "{{ d.0.0 }}", Creada: {{ d.0.1 }}</li>
+        {% if d.1 %}
+            <ul>
+                {% for e in d.1 %}
+                    <li>{{ e.0 }}, {{ e.1 }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    </div>
+
+{% endblock %}

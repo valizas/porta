@@ -1,0 +1,37 @@
+{% extends "my_base_site.html" %}
+{% load i18n %}
+
+{% block content_title %}<p>{{ data_tarea }} </p><p> &lt;{{ user.email }}&gt;</p>{% endblock %}
+
+{% block content %}
+
+    <h1><p>Documentos individuales</p></h1>
+    <div class='lista'>
+    <ul>
+    {% for d in object_list.individuales%}
+        <li>Documento "{{ d.0 }}"
+                <ul>
+                <li>Creado: {{ d.1 }}</li>
+                <li>Asignatura: {{ d.2 }}</li>
+                </ul>
+        </li>
+    {% endfor %}
+    </ul>
+    </div>
+    <h1><p>Documentos en coautorías</p></h1>
+    
+    <div class='lista'>
+    <ul>
+    {% for d in object_list.coautorias%}
+        <li>Documento "{{ d.0 }}"
+                <ul>
+                <li>Creado: {{ d.1 }}</li>
+                <li>Coautoría: {{ d.2 }}</li>
+                <li>Asignatura: {{ d.3 }}</li>
+                </ul>
+        </li>
+    {% endfor %}
+    </ul>
+    </div>
+
+{% endblock %}
